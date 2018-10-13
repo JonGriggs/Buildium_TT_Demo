@@ -7,6 +7,6 @@ variable "numinstances" {}
 variable "amiId" {}
 variable "instanceType" {}
 variable "serverKey" {}
-variable "privsubnetA" {}
-variable "privsubnetB" {}
+variable "privSubnetA" {}
+variable "privSubnetB" {}
 variable "user_data" {}

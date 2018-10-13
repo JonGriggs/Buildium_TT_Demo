@@ -70,8 +70,7 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids      = ["${aws_security_group.instanceSG.id}"]
   key_name                    = "${var.serverKey}"
 
-  #   iam_instance_profile        = "${var.roleProfileName}"
-  subnet_id = "${element(list(var.privsubnetA, var.privsubnetB), count.index)}"
+  subnet_id = "${element(list(var.privSubnetA, var.privSubnetB), count.index)}"
 
   user_data = "${var.user_data}"
 

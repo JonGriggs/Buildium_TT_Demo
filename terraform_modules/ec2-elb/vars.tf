@@ -1,0 +1,12 @@
+variable "serviceName" {}
+variable "role" {}
+variable "pubSubnetA" {}
+variable "pubSubnetB" {}
+variable "vpcId" {}
+variable "numinstances" {}
+variable "amiId" {}
+variable "instanceType" {}
+variable "serverKey" {}
+variable "privsubnetA" {}
+variable "privsubnetB" {}
+variable "user_data" {}

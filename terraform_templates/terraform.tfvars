@@ -1,3 +1,6 @@
+amiId = "ami-0df605282263fb1c9"
+instanceType = "t2.small"
 profile = "dev"
 region = "us-west-1"
+serverKey = "Griggs_TT_Demo"
 serviceName = "testService"

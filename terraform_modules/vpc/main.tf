@@ -51,7 +51,6 @@ resource "aws_subnet" "AZb_publicSubnet" {
   }
 }
 
-
 resource "aws_internet_gateway" "VpcIgw" {
   vpc_id = "${aws_vpc.vpc.id}"
 

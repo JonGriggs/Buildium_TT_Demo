@@ -21,3 +21,7 @@ output "instancePublicSubnets" {
 output "cidr_PublicSubnets" {
   value = "${module.vpc.cidr_PublicSubnets}"
 }
+
+output "ELB_DNS_Name" {
+  value = "${module.webInstances.load_balancer_dns_name}"
+}

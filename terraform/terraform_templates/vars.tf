@@ -19,3 +19,5 @@ variable "serverKey" {
 variable "dbInstanceClass" {
 }
 
+variable "RDS_password" {
+}

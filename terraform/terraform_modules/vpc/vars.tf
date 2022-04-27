@@ -1,1 +1,3 @@
-variable "serviceName" {}
+variable "serviceName" {
+}
+

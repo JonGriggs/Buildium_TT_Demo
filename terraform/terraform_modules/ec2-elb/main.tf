@@ -10,9 +10,6 @@ resource "aws_lb" "ServerLB" {
 
   tags = {
     Name = "${var.serviceName}-${var.role}LB"
-  }
-
-  tags = {
     ServiceName = var.serviceName
   }
 }
@@ -36,9 +33,6 @@ resource "aws_lb_target_group" "Server_targetGroup" {
 
   tags = {
     Name = "${var.serviceName}-HTTP-TargetGroup"
-  }
-
-  tags = {
     ServiceName = var.serviceName
   }
 }
@@ -81,13 +75,7 @@ resource "aws_instance" "instance" {
 
   tags = {
     Name = "${var.serviceName}-${var.role}${count.index + 1}"
-  }
-
-  tags = {
     ServerType = var.role
-  }
-
-  tags = {
     ServiceName = var.serviceName
   }
 }
@@ -99,8 +87,6 @@ resource "aws_security_group" "instanceSG" {
 
   tags = {
     Name = "${var.serviceName}_${var.role}_Security_Group"
-  }
-  tags = {
     ServiceName = var.serviceName
   }
 }
@@ -133,8 +119,6 @@ resource "aws_security_group" "LoadBalSG" {
 
   tags = {
     Name = "${var.serviceName}-${var.role}_Load_Balancer_Security_Group"
-  }
-  tags = {
     ServiceName = var.serviceName
   }
 }

@@ -41,7 +41,7 @@ module "database" {
   dbInstanceClass     = var.dbInstanceClass
   privSubnetA         = module.vpc.instancePrivateSubnets[0]
   privSubnetB         = module.vpc.instancePrivateSubnets[1]
-  RDS_password        = "K3rnsPl4n3T"
+  RDS_password        = var.RDS_password
   rds_security_groups = aws_security_group.dbAccess.id
   serviceName         = var.serviceName
 }

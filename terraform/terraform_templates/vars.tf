@@ -7,9 +7,6 @@ variable "region" {
 variable "serviceName" {
 }
 
-variable "amiId" {
-}
-
 variable "instanceType" {
 }
 

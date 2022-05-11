@@ -3,6 +3,16 @@ provider "aws" {
   profile = var.profile
 }
 
+data "aws_ami" "amazonlinux2" {
+  owners = ["amazon"]
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-kernel-5.10-hvm-2.0.20220426.0-x86_64-gp2"]
+  }
+}
+
 module "vpc" {
   source = "../terraform_modules/vpc"
 
@@ -21,7 +31,7 @@ data "template_file" "init" {
 module "webInstances" {
   source = "../terraform_modules/ec2-elb"
 
-  amiId        = var.amiId
+  amiId        = data.aws_ami.amazonlinux2.id
   instanceType = var.instanceType
   numinstances = "2"
   privSubnetA  = module.vpc.instancePrivateSubnets[0]
@@ -54,8 +64,8 @@ resource "aws_security_group" "dbAccess" {
 
 resource "aws_security_group_rule" "allow_cidr" {
   type                     = "ingress"
-  from_port                = 3307
-  to_port                  = 3307
+  from_port                = 3306
+  to_port                  = 3306
   protocol                 = "tcp"
   source_security_group_id = module.webInstances.instance_security_group
 

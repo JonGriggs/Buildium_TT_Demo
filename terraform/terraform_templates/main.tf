@@ -64,8 +64,8 @@ resource "aws_security_group" "dbAccess" {
 
 resource "aws_security_group_rule" "allow_cidr" {
   type                     = "ingress"
-  from_port                = 3306
-  to_port                  = 3306
+  from_port                = 3307
+  to_port                  = 3307
   protocol                 = "tcp"
   source_security_group_id = module.webInstances.instance_security_group
 
